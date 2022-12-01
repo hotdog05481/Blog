@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route::apiResource('posts', 'App\Http\Controllers\Api\PostController');
+Route::post('item', 'App\Http\Controllers\ItemController@store');
