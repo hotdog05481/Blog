@@ -51,6 +51,7 @@ Route::get('/url', function () {
 });
 
 Route::resource('posts', 'App\Http\Controllers\PostController');
+Route::resource('articles', 'App\Http\Controllers\ArticleController');
 
 /*Route::get('/url', function () {
 return url()->current();
