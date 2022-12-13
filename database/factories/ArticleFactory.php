@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 return [
     'subject' => $this->faker->realText(20),
     'content' => $this->faker->realText,

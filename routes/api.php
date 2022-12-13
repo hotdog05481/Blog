@@ -21,3 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('posts', 'App\Http\Controllers\ArticleController');
 Route::apiResource('posts', 'App\Http\Controllers\PostController');
 // Route::post('item', 'App\Http\Controllers\ItemController@store');
+
+//routes\api.php
+
+Route::group(['prefix' => 'auth', 'namespace' => 'App\Http\Controllers\Api'], function () {
+    Route::get('/', 'AuthController@me')->name('me');
+    Route::post('login', 'AuthController@login')->name('login');
+    Route::post('logout', 'AuthController@logout')->name('logout');
+});
