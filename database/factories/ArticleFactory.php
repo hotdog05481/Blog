@@ -1,16 +1,7 @@
 <?php
 
 use Carbon\Carbon;
-
-return [
-    'subject' => $this->faker->realText(20),
-    'content' => $this->faker->realText,
-    'enabled_at' => Carbon::now()->addDays(rand(0, 20)),
-    'sort' => rand(0, 20),
-    'pic' => $this->faker->imageUrl,
-    'enabled' => $this->faker->randomElement([true, false]),
-    'cgy_id' => rand(1, 20),
-];
+use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Article>
