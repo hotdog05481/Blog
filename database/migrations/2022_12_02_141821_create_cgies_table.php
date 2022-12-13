@@ -19,15 +19,14 @@ return new class extends Migration
             $table->string('pic', 255)->nullable();
             $table->text('desc')->nullable();
             $table->boolean('enabled')->default(true);
+            $table->timestamp('enabled_at')->nullable();
             $table->integer('sort')->default(0);
             $table->timestamps();
-
         });
     }
 
     /**
      * Reverse the migrations.
-     *
      * @return void
      */
     public function down()

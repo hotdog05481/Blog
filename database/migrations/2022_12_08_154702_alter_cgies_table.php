@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
-            $table->string('title', 50);
-            $table->string('type', 30)->nullable();
-            $table->string('url', 255)->nullable();
-            $table->integer('sort')->default(0);
-            $table->timestamps();
+        Schema::table('cgies', function (Blueprint $table) {
+            $table->renameColumn('subject', 'title');
+            $table->integer('sort')->nullable()->default(null)->change();
         });
     }
 
@@ -29,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::table('cgies', function (Blueprint $table) {
+            $table->renameColumn('title', 'subject');
+            $table->integer('sort')->nullable(false)->default(0)->change();
+        });
     }
 };
